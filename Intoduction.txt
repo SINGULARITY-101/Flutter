@@ -1,0 +1,55 @@
+♦ INTRODUCTION
+
+WHAT IS FLUTTER?
+*If you don't use flutter you will have to maintain seprate code bases for ios and android for the same app. Any updates or bug fixes will have to be pushed to both the app store and the play store which is a lot of work for the developer
+
+*Also, the developer will have to support a huge number of screen sizes and aspect ratios for both IOS and Android phones so that the app looks good on all screens
+
+
+
+
+
+*This is where flutter comes in 
+	-A UI toolkit that allows developers to design beautiful interfaces for all sorts of          screen sizes and devices 
+
+	-It also comes with a bunch of pre-built widgets that makes it easier to layout your 	 app
+
+	-All it asks for is a simple blank window on the device. Which could be an 	 	 	 android/IOS device, or web or desktop. What flutter will do is it will draw on 	 	 that blank window whatever needs to be rendered
+
+	-So instead of making apps the IOS way or Andorid way, you can make use of a huge 	 	 number of pre-built widgets from flutter (like a FloatingActionButton, 	 	 LinearProgressIndicator) and put them in your app regardless of the platform
+
+	-They have even designed widgets that look the part for each platform making your 	 	 app look like it was created in a native way
+
+	-After creating the app, the code can be deployed to all sorts of different devices 	 	 and platforms without having to rewrite the code or learn a differnt technology 
+
+
+*Many of the flutter concepts have been taken from the web developement department where the websites can be displayed on a wide range of devices. Flutter basically brings that functionality to mobile apps
+
+
+
+
+
+
+WHY FLUTTER? 
+*One codebase to maintain, debug and update 
+
+*You will only need to know dart to create ios apps, android apps, web apps. Which means you will have to get good at only one thing
+
+*Flutter allows you to use a very simple and flexible layout system to build beautiful user interfaces
+
+*The in-built widgets make it easier to layout the screen
+
+*If you make changes to the flutter code and then save your file, the changes are reflected immediately. This is called as hot reload. This makes it really easy to make changes to your code and iterate upon those changes 
+
+*Flutter is open source which allows you to see the original source code of every element written by the flutter team to get a better understanding of how things work 
+
+
+
+
+
+ANATOMY OF A FLUTTER APP 
+*Everything inside a flutter app is a widget and you build widgets upon widgets just like lego blocks in order to create your app
+
+
+
+

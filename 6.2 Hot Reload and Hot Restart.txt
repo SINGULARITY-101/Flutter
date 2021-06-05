@@ -1,0 +1,75 @@
+6.2 HOT RELOAD AND HOT RESTART - FLUTTER POWER TOOLS
+
+*Hot reload allows you to instantaneously see your changes in the simulator, however hot reload does not just work out of the box
+
+	-The reason for that is because for hot reload to work, we have to have the things 		 that we have changed inside a flutter STATELESS or STATEFUL widget
+
+	-STATELESS widgets can be created easily by typing "stless" and then hitting auto-		 complete. This will create a custom stateless widget class and make sure to give it 	 a name for example "test" 
+
+	-What we are doing is creating a class "test" which extends "StatelessWidget" so in 		 essense what we are doing is creating our own custom stateless widget  
+
+	-Every widget in flutter is just a class, so when we are using widgets in our code 		 like the "Text" widget, the "FloatingActionButton" widget, the "Center" widget etc 		 these are just instances of those classes 
+
+	-What we are doing by using "stless" is basically creating our own widget class and 		 that's extending the base "StatelessWidget" class in flutter. So we are inheriting 		 all the functionalities in "StatelessWidget"
+
+	-You can use your custom widgets anywhere just by creating its instance. In this 		 case the instance will be created by typing out "Test()"
+
+	
+
+
+
+
+
+
+*STATELESS WIDGETS are those widgets whose state cannnot change overtime 
+
+	-By state we mean things like the layout, the color or any data we use inside that 		 widget has to be final and it cannot change overtime as we use the app
+
+	-It can contain data but that data cannot change after the widget's been initialized
+
+
+
+
+
+*STATEFUL WIDGETS are those widgets whose state can change overtime 
+
+	-That means its layout, its color or any data inside it can change overtime 
+
+	-For example, some kind of counting widget that displays the number of flies that 		 you have swat. This widget's data will change overtime as you swat more flies which 	 will lead to an increase in the number. So we would use a stateful widget for this 
+
+
+
+
+
+
+
+
+
+
+
+
+*So how does the stateless widget help with hot reload ? 
+	-There is a "build" function inside the widget with the return type "Widget". By 		 default when the stateless widget is created, inside the build function it returns 		 a "Container()" widget
+
+	-What we want to do inside this function is return a widget tree of our homescreen, 		 which we have already built inside the "MaterialApp" and inside its "home" 	 		 property. What we are going to do is cut all the scaffold stuff and everything 	 	 inside it and we are going to return it inside the "build" function
+
+	-MAKE SURE TO GET RID OF THE EXTRA COMMA AT THE END
+
+
+
+
+
+*So how does the "build" function help us with hot reload?
+	-The "build" function is responsible for building the widget tree inside the  	 		Stateless widget we just created. Whenver we make a change inside this widget tree, 	 	Flutter detects that change when we save the file and it is going to cause the 	 		build function to rerun
+
+	-When this function reruns, Flutter will automatically update what we see on the 		 simulator to reflect the changes that have been made and this is hot reload in 	       	 action 
+
+	-So flutter now does not need to rebuild the whole app and instead just reload the 		 widget where the changes have been made. So for example, if your app has many 	 		 different stateless widgets and if we make a change to one of them, Flutter only 		 needs to rebuild that widget for us and update that on the screen 
+
+
+
+
+
+
+*What other advantages does making stateless/stateful widgets offer?
+	-It also allows for code reusability. So for example if you want to use a widget on 		 mutliple screens in your app, you can just create your widget's instance instead of 	 retyping the whole code again

@@ -1,0 +1,78 @@
+6.3 HOW TO USE CONTAINER WIDGETS 
+
+
+*Container is a widget that can be used for styling other widgets with various properties like background color, shape, size constraints etc 
+
+*A container can also be considered as a layout box which you can position as you wish and you can also give it a child to display such as an image or a piece of text 
+
+
+
+
+
+*A container is a single-child layout widget meaning it can take only one child
+	-Containers with no children try to be as big as possible
+
+	-Containers with children size themselves to their children 
+
+
+
+
+
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.pinkAccent,
+        body: Container(
+            color: Colors.white,
+            child: Text("Hello World")
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+*When you initially create a container with a child (in this case a text), you will notice that the text will be at some corner probably obstructed by some UI element of the phone like the status bar or the notch 
+
+	-In order to avoid such obstructions we will use the "SafeArea" widget which 	 	 surround its child with enough padding to avoid intrusions by the operating system. 	 For example, this will indent the child by enough to avoid the status bar at the  		 top of the screen
+
+	-Wrap the "Container" widget with a "SafeArea" widget. Use the alt+enter shortcut
+
+
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.pinkAccent,
+        body: SafeArea(
+          child: Container(
+              color: Colors.white,
+              child: Text("Hello World")
+          ),
+        ),
+      ),
+    );
+  }
+}

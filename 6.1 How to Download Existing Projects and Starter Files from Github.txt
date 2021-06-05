@@ -1,0 +1,26 @@
+♦6 MICARD - HOW TO BUILD BEAUTIFUL UIs WITH FLUTTER WIDGETS 
+
+
+6.1 HOW TO DOWNLOAD EXISTING PROJECTS / STARTER FILES ON GITHUB
+
+If you want to run some flutter project on github locally or if you want the skeleton project (which includes various things like app icons, images etc) for the current module, follow the following steps :- 
+
+	-Go to the required link and click "Clone" and copy the URL of the repository 
+
+	-Now open andorid studio 
+		*If you have a welcome screen, click on "check out project from version 		 	 control", and you are gonna select git as the provider 
+
+		 Enter the URL you just copied and the path where you want to save the 	 			 project and click clone 
+
+		 Android studio might give a prompt whether you want Android Studio to 				 create a project for you based on the files that you just downloaded, click 	 	 no
+
+
+		*If you don't get a welcome screen, go this way 
+		 "VCS -> Get from version Control". Rest of the steps are same
+
+
+	-Now click "open an existing android studio project" and select the folder where you 	 just downloaded the files and open that folder 
+
+	-Android studio will open this project as a flutter project. Now, initially you will 	 see a lot errors under dart analysis and the reason for this is because before we 		 do anything, we have to get our dependencies
+		  
+	-Our flutter projects rely on a lot of libraries and code from the flutter team. So 	 	 when we click "Get Dependencies", Android Studio will download and get everything 	 	 that is needed for our project to run 

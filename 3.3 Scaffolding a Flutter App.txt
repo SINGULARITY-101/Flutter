@@ -1,0 +1,129 @@
+3.3 SCAFFOLDING A FLUTTER APP
+
+In the last lesson we created a brand new material app. By including the Material App, we also get to tap into all of the componenets or widgets that the material apps come with such as an "Image" or a "Text" widget
+
+In this lesson we will be creating a scaffold in this material app so that we can have an app bar, a body where most of our app will go or a floating button if we wanted to. So basically the "Scaffold" widget is used to place common items onto your screen  
+
+
+
+
+
+*First thing we will be creating in the Scaffold is the app bar. We are going to delete the "Center" widget, and instead add a "Scaffold" widget to the home property of the Material App. The Scaffold widget can take a lot of different properties like "floatingActionButton", "appBar" etc. 
+
+	
+
+*In our case, we will first be creating an app bar
+	-An "AppBar" widget is simply a bit of pre-built material design and it adds top app 	 bar to your app
+
+	-If you read the documentation, you will see that you can change up the app bar a 		 lot and add a lot of extra functionality 
+
+
+
+
+
+
+
+
+
+
+*APP BAR CREATION 
+We will first create an App bar with just a title 
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("I am Rich"),
+        ),
+      ),
+    ),
+  );
+}
+
+
+
+*Now there are a variety of properties that we can change about the app bar, one of them is the background color. The backgroundColor property expects to be set as a color. Now when you include Material App in your code, you also get access to the Material Colour Pallete which can be used to change the colors of various elements of your app
+
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("I am Rich"),
+          backgroundColor: Colors.blueGrey[900],
+        ),
+      ),
+    ),
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*CHANGING THE BODY OF OUR APP
+Now that we have our appBar looking great, the next thing to change is the main body of our app. If you check out the documentation of the Scaffold, you will see that there is a body property as well
+
+Body is the primary content of the scaffold and it expects to be set with a widget
+
+	-Before doing that though, we will set the backgroundColor property of the Scaffold 	 	 so that our entire app is one even color
+
+
+
+
+Now all we need is to actually have some content in our app. For that we will change the body property of the Scaffold class and set it using an "Image" widget
+
+	-An image widget is almost like a picture frame. You create it and it strarts out 	 blank but you can change one of its properties to insert image from a variety of 		 sources
+
+	-Here, we will insert an image from the URL
+
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.blueGrey,
+        body: Image(
+          image: NetworkImage(
+              "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"),
+        ),
+        appBar: AppBar(
+          title: Text("I am Rich"),
+          backgroundColor: Colors.blueGrey[900],
+        ),
+      ),
+    ),
+  );
+}
+
+
+NOTE: If you search for the image widget in the documentation you will find two results one        from dart:ui and one from widgets. Remember, if you want something to be displayed on        the screen, it will be a widget
+
+
+	
+
+
+
+
+
+
+
+
+
+*If you want to embed a widget inside another widget an easier method to do it using this shortcut 
+	-Click on the widget that you want to embed in another widget
+
+	-Now either click the bulb icon or do 'alt+enter' to get a dropdow which makes it 	 really convenient to embed the current widget that is selected inside something 	 else
+
+	-This automatically puts in the "Center" widget, adds in a child property and puts 	 our previous widget that we had selected inside there

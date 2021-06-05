@@ -1,0 +1,20 @@
+
+♦4 RUNNING YOUR APP ON A PHYSICAL DEVICE
+
+
+
+
+4.2 DEPLOYING FLUTTER APPS TO AN ANDROID PHONE
+
+The tutorial explains it pretty nicely but still here are the steps :- 
+
+	-Enable Developer Mode 
+	-Enable USB Debugging 
+	-Connect your phone with USB
+	-Trust your Computer if Prompted
+	-Run App from Android Studio 
+
+
+
+
+

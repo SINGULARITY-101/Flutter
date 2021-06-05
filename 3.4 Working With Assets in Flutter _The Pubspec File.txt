@@ -1,0 +1,54 @@
+3.4 WORKING WITH ASSETS IN FLUTTER _THE PUBSPEC FILE 
+
+In this lesson, we will learn how to work with image assets that we load into our app so that we won't have to fetch it from the internet and you will be able to use it anywhere in your app without the need of internet connection
+
+
+
+
+*First we will create a new directory inside our main project folder called "images" 
+	-It is inside this folder we will put all our images that we are going to use in our 	 app
+
+	-Now in order to use that image in our project, we will have to edit our 	 	 configuration file called "pubspec.yaml"
+
+	-If you scroll down, you will notice an "assets" section in the YAML file where we 	 will add all the assets that we are going to use in our app
+
+	-In order to include the images in our images folder, just make an entry in the 	 assets section "images/" making sure that the indentation is proper
+
+
+	-After you are ready to incorporte the assets in your project, save the YAML file 	 and click "Packages Get" on the top right
+
+	-Now instead of using a "NetworkImage", we will use an "AssetImage" like this 
+
+
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.blueGrey,
+        body: Center(
+          child: Image(
+            image: AssetImage("images/diamond.png"),
+          ),
+        ),
+        appBar: AppBar(
+          title: Text("I am Rich"),
+          backgroundColor: Colors.blueGrey[900],
+        ),
+      ),
+    ),
+  );
+}
+
+		
+
+
+
+*The configuration file is a YAML file which stands for "YAML ain't markup language" 
+	-It is a special language that is created to be more human readbale and also 	 		 interpreatble by machines. But it relies heavily on indentation 
+
+	-For example, every section inside the configuration file is right next to the 	 		 margin without any spaces on the left. If there were spaces, they would not have 	 	 been treated as a new section, instead they would be treated as a child embedded in 	 another section
+
+	-So if you have 2 spaces next to something, then it is treated as a child inside a 	 	 section. Every indentation level is 2 spaces
+
+	-Comments are made inside the YAML file using "#" and not "//"

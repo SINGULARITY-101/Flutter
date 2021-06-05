@@ -1,0 +1,101 @@
+♦3 CREATING FLUTTER APPS FROM SCRATCH
+
+
+
+3.1 CREATING A NEW FLUTTER PROJECT FROM SCRATCH 
+
+*Company Domain is required by flutter to create a package name for your app. The package name combines your company domain with your project name to create something that can identify your app uniquely on the app stores
+
+
+
+*We will be developing a blank MaterialApp 
+	-This app will be something that conforms to the material design pattern 
+
+	-Material design is simply a design style or concept that was created by google and 	 	 by using flutter, we get to tap into a lot of these material components through the 	 use of flutter widgets
+
+
+
+
+
+
+*We can now start building our tree of widgets 
+	-The most important thing that you get to set inside the MaterialApp() is the home 		 and this is where everything starts 
+	
+	 void main() => runApp(MaterialApp(home: Text("Hello World")));
+
+	-When you go ahead and run your app, you will be able to see the text inside your 		 Material App
+
+
+
+
+
+*We have already started building our widget tree
+	-The first or the parent widget is the Material App and almost all of your flutter 		 apps will start off with this as first widget 
+
+
+	-Inside the Material App, we have the text widget which by default gets aligned to 		 the top left corner of the screen 
+
+
+
+
+
+*What if we want to align the text widget to the center? 
+	-Well as we know flutter apps are pretty much built entirely using widgets and of 		 course there is a widget for centering elements
+
+	-So instead of having the text widget as the child of the material app, it can be 		 placed inside the Center widget which will make the text display at the centre of 		 the screen
+
+	-So now in our widget tree, we have 3 widgets
+
+	
+	
+
+*It is important to format the code properly in order to see clearly which widget is inside which widget
+	-By installing flutter and dart packages, we automatically get access to a 	 	 	 reformater called dartfmt
+
+	-The flutter team advises that whenever you are creating a widget which usually 	 	 involves parenthesis, after every ending round bracket put a comma
+
+	-This will allow the reformatting to take place when you either save the file (must 		 be enabled in Android Studio) or right click and select "reformat code using 	 		 dartfmt"
+
+	-This will automatically turn your code into an indented structure
+
+	-ALWAYS ADD COMMAS AT THE END OF EVERY PARENTHESIS YOU CREATE
+
+
+
+
+
+
+*The main() is very important because when our app is run, it is the starting point for all our apps
+	-You can replace the fat-arrow from "void main() =>" with curly braces for better 		 indentation and readability 
+
+
+
+*Use // to make comments on dart 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
