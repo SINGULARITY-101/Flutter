@@ -1,0 +1,225 @@
+6.4 HOW TO USE ROW AND COLUMN WIDGETS FOR LAYOUT  
+
+*A "Container" is suitable for laying out a single widget such as a piece of text or an image 
+
+*However in order to layout lots of different widgets relative to each other, we will require multi-child layout widgets like columns and rows 
+
+*EVERYTHING BEING SAID ABOUT COLUMNS CAN BE APPLIED TO ROWS AS WELL
+
+
+
+
+
+
+*The"Column" widget is used to display its children in a vertical fashion 
+
+*The "Column" widget does not scroll (and in general it is considered an error to have more children in a "Column" that what will fit in the available room) 
+
+
+
+
+
+
+
+
+*Instead of having a single "Container" as a child of the widget "SafeArea", we will cut the container code out and instead add a "Column" as a child widget of "SafeArea" 
+
+*Now the "Column" widget can take more than one child aka "children". Inside the square brackets after "<Widget>", you can have a list of widgets you want to include in your column. Here, you will paste your previous "Container" code 
+
+*A "Column" only really comes into action when you have more than one widget
+
+
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.pinkAccent,
+
+        body: SafeArea(
+          child: Column(
+            children: <Widget>[
+
+              Container(
+                  height: 100.0,
+                  width: 100.0,
+                  color: Colors.white,
+                  child: Text("Container 1"))
+            ],
+
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+*Add more containers to the column by simply copy-pasting the container code and changing the color and text of the container
+
+*Now our columns will automatically try to take up as much of the vertical space as possible. You can actually check it out using the "flutter inspector" tab to see what our column actually looks like
+
+*You will notice that it is trying to take up all of the space that is available veritcally. But horizontally, it is limiting itself to the size of its children 
+
+	-In order to change this, you can set the "mainAxisSize: MainAxisSize.min". Now your 	 column shrinks to the size that's required to fit all its children
+
+	-Main Axis for a column is of course vertical 
+
+
+
+
+
+
+
+
+
+(just type up, down, min and the IDE will autocomplete)
+
+
+*There are other properties that you can change about the column 
+
+	-Currently our column is laying out its children from top to bottom. In order to 		 change the direction, we can change its "verticalDirection" property and set it as 		 either "verticalDirection: VerticalDirection.up" or 
+	 "verticalDirection: VerticalDirection.down" 
+
+
+	-down : Boxes should start at the top and be stacked vertically towards the bottom 
+		The "start" is at the top, the "end" is at the bottom 
+
+	-up   : Boxes should start at the bottom and be stacked vertically towards the top
+		The "start" is at the bottom, the "end" is at the top
+
+
+
+
+
+
+
+
+
+*In order to change how children are placed along the main axis, we will change the "mainAxisAlignment" property of the column 
+
+	-mainAxisAlignment: MainAxisAlignment.start
+	 Place the children as close to the start of the main axis as possible
+
+	-mainAxisAlignment: MainAxisAlignment.end
+	 Place the children as close to the end of the main axis as possible
+
+	-mainAxisAlignment: MainAxisAlignment.center
+	 Place the children as close to the middle of the main axis as possible
+
+	-mainAxisAlignment: MainAxisAlignment.spaceEvenly
+	 Place the free space evenly between the children as well as before and after the 		 first and last child
+
+	-mainAxisAlignment: MainAxisAlignment.spaceBetween
+	 Place the free space evenly between the children
+
+
+
+
+
+
+
+
+*In order to change how children are placed along the cross axis (axis perendicular to the main axis which in this case would be the horizontal axis), we will change the "crossAxisAlignment" property of the column 
+
+	-crossAxisAlignment: CrossAxisAlignment.end
+	 Place the children as close to the end of the cross axis as possible.
+	 
+	 You won't see any effect if all your children are of the same size as then all the 		 children are already aligned to the end of the cross axis. To notice a difference, 		 change the size of one of your child
+
+
+
+
+
+	 However if you wanted all of your containers to shift to the right without changing 	 the size, one way of doing this is by creating another invisible child container 		 with infinite width like this :- 
+
+              Container(
+                width: double.infinity,
+              )
+
+	 
+	What this will do is create a container that is as wide as the screen will allow it 		to be. It has no colour so it will be invisible, and it pushes all of our children 		to the right because we are now aligning the children to the end of the horizontal 		axis
+
+
+
+
+
+
+
+
+	-crossAxisAlignment: CrossAxisAlignment.strech
+	 Require the children to fill the cross axis
+
+	 What if you wanted your children to strech across the entire width? Now one way of 		 doing this is by giving each of your child a width of "double.infinity" which is 		 tedious 
+
+	 Instead we will just set the above property and now all of your children will 	 		 strech across the entire width
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*What if you wanted a little bit of spacing between your children? 
+
+	-If you knew exactly how much space you want to have between your children, you 		 can use a "SizedBox"
+
+	-A "SizedBox" can have a height and a width but here in this case we are aligning 		 the children vertically so we only need a height 
+
+	-When you save the file, you will notice a spacing between container 1 and 	 	 container 2
+
+
+body: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Container(
+                  height: 100.0,
+                  width: 100.0,
+                  color: Colors.white,
+                  child: Text("Container 1")),
+
+              SizedBox(
+                height: 20.0,
+              ),
+
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.blue,
+                child: Text("Container 2"),
+              ),
+              
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
+                child: Text("Container 3"),
+              ),
+            ],
+          ),
+        ),
