@@ -1,0 +1,60 @@
+6.6 TAPPING INTO WIDGET PROPERTIES
+
+Our layout goes from top to bottom, so we will be using a column as our layout widget 
+
+
+
+
+*The first widget that will come in our column will be something called as "CircleAvatar" 
+
+	-In order to access quick documentation about a widget press "cntrl+q"
+
+	-"CircleAvatar" creates a circle that represents a user. Image will be cropped to 	 	 have a circle shape
+
+	-You can change a variety of properties about it including the "BackgroundImage" and 	 set it as a custom image
+
+	-For that you will have to :-
+		*Create a new directory called "images"
+		*Add the required images in that folder 
+		*Add "images/" under the "assets:" section of your pubspec.yaml file 
+		*Run Pub get 
+		*Set the "backgroundImage" property as:-
+		 backgroundImage: AssetImage("images/dp.jpeg")
+
+
+
+
+
+*After the image has been included, we will add a text widget below it with our name 
+
+	-You can change a lot about the "Text" widget using the "style" property
+
+	-Set the "style" property as the "TextStyle" widget and then hit "cntrl + q" to look 	 at the various properties you can change
+
+
+
+
+
+
+
+body: SafeArea(
+          child: Column(
+            children: <Widget>[
+
+              CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage("images/dp.jpeg"),
+              ),
+
+              Text(
+                "Vishesh Kwatra",
+                style: TextStyle(
+                  fontSize: 40.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+            ],
+          ),
+        ),
