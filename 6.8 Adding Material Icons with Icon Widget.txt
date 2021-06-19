@@ -1,0 +1,33 @@
+6.8 ADDING MATERIAL ICONS WITH THE ICON WIDGET 
+
+*You can use an image asset as an icon but it is nowhere near as adapatable as simply using an icon widget 
+
+*An icon is a class that is DRAWN instead of being shown as is like the image class. Flutter is actually DRAWING all of the sides and the edges onto the screen
+
+*This allows you to change various properties like the color and the size of the icon on the fly. Also, since the material icons are vectors, they do not get pixelated as we increase their size which is not the case for images
+
+*Best way to browse the material icons is by going on "https://www.materialpalette.com/". Here you can search for the icon you are looking for
+
+
+
+	-Once you have found the icon you are looking for, look at its identifier. This is 	 the name we will use to embed the icon in our "Icon" widget
+
+	-"Icons" is the name of the class that supports material design icons (just like the 	 "Colors" class that supports material color pallete)
+
+	
+
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceAround,
+  children: const <Widget>[
+
+    Icon(
+      Icons.favorite,
+      color: Colors.pink,
+      size: 24.0,
+      semanticLabel: 'Text to announce in accessibility modes',
+    ),
+
+
+
+
+
