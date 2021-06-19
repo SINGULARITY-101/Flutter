@@ -1,0 +1,36 @@
+6.7 INCORPORATING CUSTOM FONTS IN YOUR FLUTTER APP
+
+*The steps are very similar like when you want to include an image in your project 
+
+	-Download the required font from "https://fonts.google.com/"
+
+	-Create a new directory in your main project folder called "fonts" and add the ttf 		 file you just downloaded into that directory  
+
+	-Now you ll have to include the custom font in your "pubspec.yaml" file 
+
+	-It is better to copy paste the code from 	 	 		 "https://flutter.dev/docs/cookbook/design/fonts"
+
+	-This will help you avoid indentation errors in your "pubspec.yaml" file 
+
+
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - images/
+
+  fonts:
+    - family: Pacifico
+      fonts:
+        - asset: fonts/Pacifico-Regular.ttf
+
+
+
+	-You will now refer to your custom font with its "family" name
+
+	-Now go into your "main.dart" and update the "Text" widget's "style" property
+
+	-fontFamily: "Pacifico"
+
+	-Now since you have added in a new resource, you will have to rebuild your project 		 from cold by clicking stop and play so that it links up all the necessary things 		 that we need
