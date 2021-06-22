@@ -1,0 +1,63 @@
+6.9 FLUTTER CARD _LISTTILE WIDGETS
+
+*We need to change some subtle things about the information section. Like rounding the corners and adding a shadow under the white part 
+
+*Now we could either customize the containers we have or use an in-built widget called the "Card" widget 
+
+	-The "Card" widget is a material design card with slighlty rounded corners and an 		 elevation shadow. We will be swapping out our containers with this widget 
+
+	-The "Card" widget does not have any padding property, so we will delete the padding 	 lines that we had written for the container. When you save, you will notice that 		 your info section automatically starts looking like cards 
+
+	-They by default come in white color
+
+
+
+
+
+
+
+*The issue is that our cards don't have any padding. So what can we do when we have a widget that does not have a property that we want to change? 
+
+	-If you look through the flutter documenatation you will come across a "Padding" 		 widget. This is a widget that can be added as a parent to any other widget and it 		 will give it some padding
+
+	-We will wrap our "Row" with the "Padding" widget to give it some padding 
+
+
+
+
+
+
+
+
+*Not only we can use the "Card" widget to make our lives easier, we also replace the rows with the "ListTile" widget which is used to display icons and text in a "Card"
+
+	-The "ListTile" widget is used to display some text as well as a leading or trailing 	 icon
+
+	-This widget by default adds some padding, so no need to add extra padding using the 	 "Padding" widget 
+
+
+
+Card(
+      child: ListTile(
+        leading: FlutterLogo(),
+        title: Text('One-line with both widgets'),
+        trailing: Icon(Icons.more_vert),
+      ),
+
+
+
+
+
+
+
+
+
+*Now to finally add the line between the job title and the contact information, we will add a sized box with a child called "Divider" widget
+
+              SizedBox(
+                height: 20.0,
+                width: 150,
+                child: Divider(
+                  color: Colors.teal[100],
+                ),
+              ),
